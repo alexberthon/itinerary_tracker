@@ -1,0 +1,23 @@
+{
+  "name": "tracker",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^1.4.3",
+    "@material-ui/lab": "^1.0.0-alpha.9",
+    "material-ui-slider-label": "git+https://github.com/tariqwest/material-ui-slider-label.git",
+    "moment": "^2.22.2",
+    "rc-slider": "^8.6.1",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-google-maps": "^9.4.5",
+    "react-player-controls": "^0.5.20",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
