@@ -11,6 +11,7 @@ const initialItinerary = [
 		date: "20190101",
 		dateNumber: 0,
 		location: {
+			address: "Paris, France",
 			lat: 48.850970,
 			lng: 2.328626
 		}
@@ -84,7 +85,7 @@ class App extends Component {
 			alignItems="center"
 			>
 			<Grid item xs={12} sm={8}>
-			<MapContainer itinerary={this.state.itinerary}/>
+			<MapContainer itinerary={this.state.itinerary} isLoading={this.state.isLoading}/>
 			</Grid>
 			<Grid item xs={12} sm={4}>
 			<div></div>
