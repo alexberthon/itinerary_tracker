@@ -1,4 +1,4 @@
-$icon-size: 30px;
+$icon-size: 1.5em;
 $green: #72D687;
 $white: #FFFFFF;
 $gray: #D3D3D3;
@@ -7,8 +7,8 @@ $lightgray: #EEEEEE;
 // $color-hover: saturate(lighten($green, 10%), 20%);
 // $color-active: desaturate(darken($green, 20%), 20%);
 
-$color-hover: desaturate(darken($green, 20%), 10%);
-$color-active: fade-out($color-hover, 0.5);
+$color-hover: desaturate(darken($white, 20%), 10%);
+$color-active: fade-out($white, 0.5);
 
 
 //
@@ -22,9 +22,9 @@ $color-active: fade-out($color-hover, 0.5);
 .SoundOnButton,
 .SoundOffButton {
   margin-right: 10px;
-  padding: 8px;
-  background: $white;
-  border: 2px solid $green;
+  padding: 4px;
+  background: transparent;
+  border: none;
   border-radius: 100%;
   outline: none;
 
@@ -60,7 +60,7 @@ $color-active: fade-out($color-hover, 0.5);
 }
 
 .Icon-shape {
-  fill: $green;
+  fill: $color-active;
 }
 
 

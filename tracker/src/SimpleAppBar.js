@@ -4,23 +4,28 @@ import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 
 const styles = {
   root: {
-    flexGrow: 1,
-    background: '#2196F3'
+    flexGrow: 0,
   },
+  flex: {
+    flexGrow: 1,
+    textAlign: 'left'
+  }
 };
 
 function SimpleAppBar(props) {
   const { classes } = props;
   return (
-    <div className={classes.root}>
+    <div className="SimpleAppBar" style={{zIndex: 99}}>
       <AppBar position="static" color="secondary">
         <Toolbar>
-          <Typography variant="title" color="inherit">
+          <Typography className={classes.flex} variant="title" color="inherit">
             Tracker
           </Typography>
+          <Button color="inherit">Aller sur le blog</Button>
         </Toolbar>
       </AppBar>
     </div>

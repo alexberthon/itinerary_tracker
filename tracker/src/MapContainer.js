@@ -16,20 +16,23 @@ export class MapContainer extends React.Component {
 	changePlace(newPlace){
 		this.setState({
 			place: newPlace
-		})
+		});
+		this.props.onChange(newPlace);
 	}
 
-	componentWillReceiveProps(nextProps) {
-            this.setState({
-            	itinerary: nextProps.itinerary,
-				place: nextProps.itinerary[0]
-            });
-        }
+	componentDidUpdate(prevProps) {
+		if(prevProps.itinerary.length !== this.props.itinerary.length){
+			this.setState({
+				itinerary: this.props.itinerary,
+				place: this.props.itinerary[0]
+			});
+		}
+	}
 
 	render(){
 		return (
-			<div>
-				<MyMap itinerary={this.state.itinerary} place={this.state.place} />
+			<div className="MapContainer" style={{}}>
+				<MyMap className="MyMap" itinerary={this.state.itinerary} place={this.state.place} />
 				<CoordsSlider itinerary={this.state.itinerary} place={this.state.place} onChange={this.changePlace} isLoading={this.props.isLoading}/>
 			</div>
 			)

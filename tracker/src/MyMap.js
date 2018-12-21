@@ -1,7 +1,8 @@
 import React from "react";
 import { compose, withProps } from "recompose";
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, Polyline } from "react-google-maps";
-import avatar from './avatar.png';
+import marker from './marker.png';
+//import {mapStyles} from './mapStyles'
 
 // Define a symbol using SVG path notation, with an opacity of 1.
 var lineSymbol = {
@@ -10,12 +11,14 @@ var lineSymbol = {
 	scale: 3
 };
 
+const mapStyles = require('./mapStyles-VintageRed.json')
+
 const MyMapComponent = compose(
 	withProps({
-		googleMapURL: "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places",
+		googleMapURL: "https://maps.googleapis.com/maps/api/js?key=&v=3.exp&libraries=geometry,drawing,places",
 		loadingElement: <div style={{ height: `100%` }} />,
-		containerElement: <div style={{ height: "80vh", "marginBottom": "4vh" }} />,
-		mapElement: <div style={{ height: `100%` }} />,
+		containerElement: <div className="MyMapContainerElement" style={{}} />,
+		mapElement: <div className="MyMapMapElement" style={{  }} />,
 	}),
 	withScriptjs,
 	withGoogleMap
@@ -26,12 +29,15 @@ const MyMapComponent = compose(
 	defaultCenter={{ lat: 48.859, lng: 2.3498 }}
 	center={props.coords}
 	debug={console.log("Map render")}
+	defaultOptions={{
+		styles: mapStyles
+	}}
 	>
-	<Marker position={props.coords} onClick={props.onMarkerClick} icon={avatar}/>
+	<Marker position={props.coords} onClick={props.onMarkerClick} icon={marker}/>
 	<Polyline
 	path={props.itinerary}
 	defaultOptions={{
-		strokeColor: "#A22D33",
+		strokeColor: "red",
 		strokeOpacity: 0,
 		strokeWidth: 2,
 		icons: [{
@@ -70,14 +76,12 @@ const MyMapComponent = compose(
 
 		render() {
 			return (
-				<div>
 				<MyMapComponent
 				isMarkerShown={this.state.isMarkerShown}
 				onMarkerClick={this.handleMarkerClick}
 				coords={this.state.coords}
 				itinerary={this.state.itinerary}
 				/>
-				</div>
 				)
 		}
 	}

@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+}
+.App .simpleAppBar {
+  background-color: #21DE71;
+  height: 150px;
+}
+.App .mainContainer {
+  background-color: #2EC55C;
+  flex-grow: 1;
+  min-height: 0;
+  display: flex;
+}
+.App .mainContainer .mapContainer {
+    flex-grow: 1;
+    background-color: #6733FC;
+    display: flex;
+    flex-direction: column;
+}
+.App .mainContainer .mapSection {
+  flex-grow: 1;
+  background-color: #6733FC;
+  display: flex;
+  flex-direction: column;
+}
+.App .mainContainer .postsSection {
+  flex-basis: 18vw;
+  background-color: #BFFD19;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 30px;
+  min-height: 0px;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+.App .mainContainer .postsSection .postsContainer .post {
+  margin-bottom: 15px;
+  background-color: #6036AD;
+  width: 95%;
+  height: 160px;
+  flex-shrink: 0;
+}

@@ -22,7 +22,167 @@
   font-size: large;
 }
 
+.mainContainer {
+  flex-grow: 1
+}
+
+.mapSection {
+  display: flex;
+  flex-grow: 10 !important;
+  flex-direction: column;
+  max-width: 100%;
+  flex-basis: 100%;
+}
+
+.postsSection {
+  display: flex;
+  flex-grow: 1 !important;
+  max-width: 100%;
+  flex-basis: 100%;
+}
+
+.MapContainer {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  position: relative;
+}
+
+.CoordsSlider {
+  width: 80%;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  padding: .5em;
+  background: #262626;
+  border-radius: 12px;
+}
+
+.PlaybackControls {
+  flex-grow: 0;
+}
+
+.rc-slider.MySlider {
+  flex-grow: 20;
+  width: auto !important;
+  height: 14px;
+  padding: .25em 0;
+  border-radius: 6px;
+}
+
+.MyMapContainerElement {
+  flex-grow: 1;
+  display: flex;
+}
+
+.MyMapMapElement {
+  flex-grow: 1;
+}
+
+.CardText {
+  display: none;
+}
+
+.CardTitle {
+  font-size: 1rem;
+}
+
+.CardMedia {
+  height: 0;
+  /* padding-top: 40.25%; */
+  padding-top: 20vw;
+}
+
+.PostsContainer {
+  max-height: auto;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+@media screen and (min-width: 799px), screen and (orientation: landscape) {
+  .mainContainer {
+    flex-direction: row !important;
+  }
+  .mapSection {
+    max-width: 75%;
+    flex-basis: 75%;
+  }
+  .postsSection {
+    max-width: 25%;
+    flex-basis: 25%;
+  }
+  .CardText {
+    display: block;
+  }
+  .CardTitle {
+    font-size: 1.5rem;
+  }
+  .CardMedia {
+    height: 0;
+    padding-top: 56.25%;
+  }
+}
+
+@media screen and (max-width: 480px), screen and (orientation: portrait) {
+  html {
+    font-size: 14px;
+  }
+  .SimpleAppBar {
+    display: none;
+  }
+  .postsSection {
+    flex-grow: 1 !important;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .post {
+    /* max-height: 30vh; */
+    flex-basis: 40%;
+  }
+  .PostsContainer {
+    height: 33vh;
+    flex-grow: 1;
+    flex-wrap: nowrap !important;
+    align-items: center;
+  }
+  .CardContent {
+    padding: .5rem !important;
+  }
+  .CardTitle {
+    font-size: 1.4rem !important;
+  }
+  .CardActions {
+    padding: .3rem !important;
+  }
+}
+
+@media screen and (max-height: 480px) and (orientation: landscape) {
+  html {
+    font-size: 14px;
+  }
+  .SimpleAppBar {
+    display: none;
+  }
+  .mapSection {
+    max-width: 70%;
+  }
+  .postsSection {
+    max-width: 30%;
+  }
+  .CardContent {
+    padding: .5rem !important;
+  }
+  .CardTitle {
+    font-size: 1.4rem !important;
+  }
+  .CardActions {
+    padding: .3rem !important;
+  }
 }
